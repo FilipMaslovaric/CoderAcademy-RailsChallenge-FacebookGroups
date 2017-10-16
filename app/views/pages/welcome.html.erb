@@ -1,0 +1,21 @@
+<h1>Groups</h1>
+
+<% @groups.each do |group| %>
+  <h2><%= group.name %></h2>
+  <hr>
+  <h4>Users:</h4>
+    <% group.users.each do |user| %>
+      <p><%= user.email %></p>
+    <% end %>
+    <hr>
+  <h4>Posts:</h4>
+  <% group.posts.each do |post| %>
+    <p><%= post.content %></p>
+    <hr>
+    <h4>Comments:</h4>
+    <% post.comments.each do |comment| %>
+      <p><%= comment.content %></p>
+    <% end %>
+  <% end %>
+  <br>
+<% end %>
